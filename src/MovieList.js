@@ -1,2 +1,4 @@
-function MovieInList() {}
-export default MovieInList;
+function MovieList() {
+  return <div className="MovieList"></div>;
+}
+export default MovieList;

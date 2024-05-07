@@ -1,2 +1,4 @@
-function MovieTrend() {}
-export default MovieTrend;
+function TrendingList() {
+  return <div className="TrendingList"></div>;
+}
+export default TrendingList;

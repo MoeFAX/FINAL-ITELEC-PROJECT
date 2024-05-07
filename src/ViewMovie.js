@@ -1,5 +1,5 @@
 function ViewMovie() {
-  return <div></div>;
+  return <div className="ViewMovie"></div>;
 }
 
 export default ViewMovie;
