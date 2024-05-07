@@ -1,6 +1,10 @@
 import { FaCircleUser } from "react-icons/fa6";
 
-function NavBar({ handleLogout }) {
+function NavBar({ setLogin }) {
+  function handleLogout() {
+    setLogin(false);
+  }
+
   return (
     <div className="NavBar">
       <select className="Dropdown"></select>&nbsp;

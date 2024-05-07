@@ -1,36 +1,60 @@
-// import { useState } from "react";
+import { useState } from "react";
+import { users } from "./UserData";
 
-// function Login({ name, password }) {
-//   function handleSubmit(e) {
-//     //Prevents Page Reload
-//     e.preventDefault();
+function Login({ setLogin }) {
+  const [name, setName] = useState("");
+  const [password, setPassword] = useState("");
 
-//     //form validation: if no input, return nothing
-//     if (!name || !password) return;
-//     const loggedIn = { name, password };
-//   }
+  function handleSubmit(e) {
+    //Prevents Page Reload
+    e.preventDefault();
 
-//   return (
-//     <div className="Login">
-//       <form className="MainForm" onSubmit={handleSubmit}>
-//         <input
-//           className="nameInput"
-//           type="text"
-//           placeholder="Username"
-//           value={name}
-//           onChange={(e) => setName(e.target.value)}
-//         />
-//         <input
-//           className="passwordInput"
-//           type="text"
-//           placeholder="Password"
-//           value={password}
-//           onChange={(e) => setPassword(e.target.value)}
-//         />
-//         <button className="Submit">LOGIN</button>
-//       </form>
-//     </div>
-//   );
-// }
+    //form validation: if no input, return nothing
+    if (!name || !password) {
+      window.alert("All fields must be filled up.");
+    } else if (users.some((users) => users.name === name)) {
+      if (users.some((users) => users.password === password)) {
+        setLogin(true);
+      } else {
+        window.alert("Invalid Credentials!");
+        setName("");
+        setPassword("");
+      }
+    } else {
+      window.alert("Invalid Credentials!");
+      setName("");
+      setPassword("");
+    }
+  }
 
-// export default Login;
+  const [visible, setVisible] = useState(false);
+
+  const togglePassword = () => {
+    setVisible(!visible);
+  };
+
+  return (
+    <div className="Login">
+      <form className="LoginForm" onSubmit={handleSubmit}>
+        <label>Username</label>
+        <input
+          className="nameInput"
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <label>Password</label>
+        <input
+          className="passwordInput"
+          type={visible ? "text" : "password"}
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <button className="Login">LOGIN</button>
+      </form>
+      <button onClick={togglePassword}>{visible ? "Hide" : "Show"}</button>
+    </div>
+  );
+}
+
+export default Login;
