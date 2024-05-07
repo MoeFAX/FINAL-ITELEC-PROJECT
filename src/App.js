@@ -7,8 +7,9 @@ function App() {
   const [login, setLogin] = useState(false);
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
+  const [visible, setVisible] = useState(false);
 
-  const [users, setUsers] = useState([
+  const users = [
     {
       id: 1,
       name: "Mark Calina",
@@ -34,31 +35,33 @@ function App() {
       name: "Ezrah San Agustin",
       password: "Ez123!",
     },
-  ]);
+  ];
 
   function handleSubmit(e) {
     //Prevents Page Reload
     e.preventDefault();
 
     //form validation: if no input, return nothing
-    if (!name || !password) return;
-
-    if (name === "Mark Calina" && password === "Mac123!") {
-      setLogin(true);
-    } else if (name === "Allain Espina" && password === "Aleyn123!") {
-      setLogin(true);
-    } else if (name === "Elpidio Monteclaro" && password === "Ej123!") {
-      setLogin(true);
-    } else if (name === "Josh Reyes" && password === "Audwin123!") {
-      setLogin(true);
-    } else if (name === "Ezrah San Agustin" && password === "Ez123!") {
-      setLogin(true);
+    if (!name || !password) {
+      window.alert("All fields must be filled up.");
+    } else if (users.some((users) => users.name === name)) {
+      if (users.some((users) => users.password === password)) {
+        setLogin(true);
+      } else {
+        window.alert("Invalid Credentials!");
+        setName("");
+        setPassword("");
+      }
     } else {
       window.alert("Invalid Credentials!");
+      setName("");
+      setPassword("");
     }
   }
 
-  console.log(users[1]);
+  const togglePassword = () => {
+    setVisible(!visible);
+  };
 
   function handleLogout() {
     setLogin(false);
@@ -82,12 +85,13 @@ function App() {
             <label>Password</label>
             <input
               className="passwordInput"
-              type="text"
+              type={visible ? "text" : "password"}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
             <button className="Login">LOGIN</button>
           </form>
+          <button onClick={togglePassword}>{visible ? "Hide" : "Show"}</button>
         </div>
       )}
     </div>
