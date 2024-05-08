@@ -1,4 +1,7 @@
 import { FaCircleUser } from "react-icons/fa6";
+import "./NavBar.css";
+import Trending from "./Trending";
+import MovieList from "./MovieList";
 
 function NavBar({ setLogin }) {
   function handleLogout() {
@@ -6,14 +9,44 @@ function NavBar({ setLogin }) {
   }
 
   return (
-    <div className="NavBar">
-      <select className="Dropdown"></select>&nbsp;
-      <input className="SearchBar" type="text" placeholder="Find a Movie." />
-      &nbsp;
-      <FaCircleUser size={25} />
-      <form className="LogoutForm" onSubmit={handleLogout}>
-        <button>LOGOUT</button>
-      </form>
+    <div className="HomePage">
+      <div className="NavBar">
+        <div className="left-section">
+          <img
+            src="pictures/navlogo.png"
+            className="navlogo"
+            alt="navlogo"
+          ></img>
+          <h1>Harshmallows</h1>
+        </div>
+        <div className="right-section">
+          <div className="category">
+            <img
+              src="pictures/smores.png"
+              className="smores"
+              alt="smores"
+            ></img>
+            <h2>Smores</h2>
+            <img src="pictures/burnt.png" className="burnt" alt="burnt"></img>
+            <h2>Burnt</h2>
+          </div>
+          <select className="Dropdown"></select>&nbsp;
+          <input
+            className="SearchBar"
+            type="text"
+            placeholder="Find a Movie."
+          />
+          &nbsp;
+          <div className="user-container">
+            <FaCircleUser size={30} />
+          </div>
+          <form className="LogoutForm" onSubmit={handleLogout}>
+            <button className="LogoutButton">LOGOUT</button>
+          </form>
+        </div>
+      </div>
+      <Trending />
+      <MovieList />
     </div>
   );
 }

@@ -1,0 +1,108 @@
+.HomePage {
+  background-color: #e7ceaa;
+  min-height: 100vh; /* Ensure the element covers the entire viewport height */
+  overflow: hidden;
+}
+
+body {
+  overflow: hidden;
+}
+.navlogo {
+  width: 40px;
+  height: 40px;
+}
+.smores {
+  width: 25px;
+  height: 25px;
+  margin-right: 1px;
+}
+
+.burnt {
+  width: 25px;
+  height: 25px;
+  margin-left: 10px;
+  position: relative;
+  left: 3px;
+  bottom: 2px;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+}
+
+.NavBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 20px;
+  background-color: #f0f4cc;
+}
+
+.category {
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+}
+
+.NavBar h2 {
+  font-size: 18px;
+}
+
+.NavBar h1 {
+  margin-left: 3px;
+}
+.NavBar h1,
+h2 {
+  margin: 0;
+}
+
+.SearchBar {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 150px;
+  height: 20px;
+  margin-bottom: 1px;
+  margin-left: 2px;
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.user-container {
+  display: flex;
+  align-items: center;
+  margin-left: 2px;
+}
+
+.Dropdown {
+  width: 80px;
+  height: 31px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.LogoutForm {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.LogoutButton {
+  background-color: #ffffff00;
+  color: black;
+  padding: 5px 5px;
+  border: 1px;
+  border-style: solid;
+  border-color: black;
+  border-radius: 4px;
+}
+
+.Trending {
+  height: 330px;
+}

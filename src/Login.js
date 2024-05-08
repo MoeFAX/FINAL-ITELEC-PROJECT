@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { users } from "./UserData";
+import "./Login.css";
 
 function Login({ setLogin }) {
   const [name, setName] = useState("");
@@ -34,25 +35,31 @@ function Login({ setLogin }) {
   };
 
   return (
-    <div className="Login">
-      <form className="LoginForm" onSubmit={handleSubmit}>
-        <label>Username</label>
-        <input
-          className="nameInput"
-          type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-        <label>Password</label>
-        <input
-          className="passwordInput"
-          type={visible ? "text" : "password"}
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button className="Login">LOGIN</button>
-      </form>
-      <button onClick={togglePassword}>{visible ? "Hide" : "Show"}</button>
+    <div className="LoginContainer">
+      <div className="LoginCard">
+        <img src="pictures/logo.png" className="logo" alt="logo"></img>
+        <h1>Harshmallows</h1>
+        <form className="LoginForm" onSubmit={handleSubmit}>
+          <label>Username</label>
+          <input
+            className="nameInput"
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+          <label>Password</label>
+          <input
+            className="passwordInput"
+            type={visible ? "text" : "password"}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <button className="LoginButton">LOGIN</button>
+        </form>
+        <button className="ShowHideButton" onClick={togglePassword}>
+          {visible ? "Hide" : "Show"}
+        </button>
+      </div>
     </div>
   );
 }

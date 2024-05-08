@@ -10,6 +10,7 @@ function App() {
     <div className="App">
       {login ? (
         /*Place Code for Logged in User here*/
+
         <NavBar setLogin={setLogin}></NavBar>
       ) : (
         <Login setLogin={setLogin} />

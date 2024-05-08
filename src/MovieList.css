@@ -1,0 +1,40 @@
+.MovieContainer h2 {
+  position: relative;
+  top: 20px;
+  right: 655px;
+}
+
+.MovieContainer {
+  height: 20%;
+}
+.img {
+  border-radius: 5px;
+  width: 150px;
+  height: 180px;
+}
+
+.MovieList {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.moviecard {
+  border-radius: 10px;
+  padding: 2px;
+  margin: 20px;
+  width: 200px;
+  display: inline-block;
+  position: relative;
+  bottom: 100px;
+}
+
+.moviecard h3 {
+  position: relative;
+  bottom: 20px;
+}
+
+.moviecard h4 {
+  position: relative;
+  bottom: 40px;
+}

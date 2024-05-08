@@ -1,0 +1,37 @@
+.Trending h2 {
+  position: relative;
+  top: 20px;
+  right: 655px;
+}
+
+.img {
+  border-radius: 5px;
+  width: 150px;
+  height: 180px;
+}
+
+.TrendingList {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.trendcard {
+  border-radius: 10px;
+  padding: 2px;
+  margin: 20px;
+  width: 200px;
+  display: inline-block;
+  position: relative;
+  bottom: 100px;
+}
+
+.trendcard h3 {
+  position: relative;
+  bottom: 20px;
+}
+
+.trendcard h4 {
+  position: relative;
+  bottom: 40px;
+}
