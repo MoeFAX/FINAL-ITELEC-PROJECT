@@ -1,3 +1,9 @@
+@import url("https://fonts.cdnfonts.com/css/more-sugar");
+
+.LogoLabel {
+  font-family: "More Sugar", sans-serif;
+}
+
 .HomePage {
   background-color: #e7ceaa;
   min-height: 100vh; /* Ensure the element covers the entire viewport height */

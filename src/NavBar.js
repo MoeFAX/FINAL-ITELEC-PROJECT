@@ -1,7 +1,7 @@
 import { FaCircleUser } from "react-icons/fa6";
 import "./NavBar.css";
-import Trending from "./Trending";
-import MovieList from "./MovieList";
+// import Trending from "./Trending";
+// import MovieList from "./MovieList";
 
 function NavBar({ setLogin }) {
   function handleLogout() {
@@ -17,7 +17,7 @@ function NavBar({ setLogin }) {
             className="navlogo"
             alt="navlogo"
           ></img>
-          <h1>Harshmallows</h1>
+          <h1 className="LogoLabel">HARSHMALLOWS</h1>
         </div>
         <div className="right-section">
           <div className="category">
@@ -26,9 +26,9 @@ function NavBar({ setLogin }) {
               className="smores"
               alt="smores"
             ></img>
-            <h2>Smores</h2>
+            <h2 className="LogoLabel">S'MORES</h2>
             <img src="pictures/burnt.png" className="burnt" alt="burnt"></img>
-            <h2>Burnt</h2>
+            <h2 className="LogoLabel">BURNT</h2>
           </div>
           <select className="Dropdown"></select>&nbsp;
           <input
@@ -45,8 +45,8 @@ function NavBar({ setLogin }) {
           </form>
         </div>
       </div>
-      <Trending />
-      <MovieList />
+      {/* <Trending />
+      <MovieList /> */}
     </div>
   );
 }
