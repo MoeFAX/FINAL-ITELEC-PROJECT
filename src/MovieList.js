@@ -5,7 +5,7 @@ import "./MovieList.css";
 function MovieList() {
   return (
     <div className="MovieContainer">
-      <h2>Movies</h2>
+      <p>MOVIES</p>
       <div className="MovieList">
         {trendData.map((movie) => (
           <Movies movieObj={movie} key={movie.no} />

@@ -34,4 +34,11 @@ export const trendData = [
     imgtxt: "dune5",
     rating: "99%",
   },
+  {
+    id: "6",
+    image: "pictures/duneposter.jpg",
+    movieTitle: "Movie Title 6",
+    imgtxt: "dune6",
+    rating: "70%",
+  },
 ];

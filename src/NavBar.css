@@ -4,18 +4,13 @@
   font-family: "More Sugar", sans-serif;
 }
 
-.HomePage {
-  background-color: #e7ceaa;
-  min-height: 100vh; /* Ensure the element covers the entire viewport height */
-  overflow: hidden;
-}
-
 body {
   overflow: hidden;
 }
 .navlogo {
   width: 40px;
   height: 40px;
+  margin-right: 5px;
 }
 .smores {
   width: 25px;
@@ -52,11 +47,12 @@ body {
 }
 
 .NavBar h2 {
-  font-size: 18px;
+  font-size: 15px;
 }
 
 .NavBar h1 {
   margin-left: 3px;
+  font-size: 25px;
 }
 .NavBar h1,
 h2 {

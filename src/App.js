@@ -12,14 +12,14 @@ function App() {
     <div className="App">
       {login ? (
         /*Place Code for Logged in User here*/
-        <div>
-          <div>
+        <div className="HomePage">
+          <div className="NavBarContainer">
             <NavBar setLogin={setLogin} />
           </div>
-          <div>
+          <div className="TrendContainer">
             <Trending />
           </div>
-          <div>
+          <div className="MovContainer">
             <MovieList />
           </div>
         </div>
