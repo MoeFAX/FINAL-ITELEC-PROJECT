@@ -5,8 +5,12 @@ import Trending from "./Trending";
 import MovieList from "./MovieList";
 import { useState } from "react";
 
+const API_KEY = "a2b54e5bd42ad4dc4ec87fda7164107d";
+
 function App() {
   const [login, setLogin] = useState(false);
+  const [movie, setMovie] = useState([]);
+  const [trend, setTrend] = useState([]);
 
   return (
     <div className="App">
@@ -14,18 +18,18 @@ function App() {
         /*Place Code for Logged in User here*/
         <div className="HomePage">
           <div className="NavBarContainer">
-            <NavBar setLogin={setLogin} />
+            <NavBar setLogin={setLogin} setMovie={setMovie} movie={movie} />
           </div>
           <div className="TrendContainer">
-            <Trending />
+            <Trending trend={trend} />
           </div>
           <div className="MovContainer">
-            <MovieList />
+            <MovieList movie={movie} />
           </div>
         </div>
       ) : (
         <div>
-          <Login setLogin={setLogin} />
+          <Login setLogin={setLogin} setTrend={setTrend} apiKey={API_KEY} />
         </div>
       )}
     </div>

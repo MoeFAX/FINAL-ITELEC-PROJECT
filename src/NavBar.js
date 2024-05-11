@@ -1,9 +1,8 @@
 import { FaCircleUser } from "react-icons/fa6";
 import "./NavBar.css";
-// import Trending from "./Trending";
-// import MovieList from "./MovieList";
+import SearchBar from "./SearchBar";
 
-function NavBar({ setLogin }) {
+function NavBar({ setLogin, setMovie }) {
   function handleLogout() {
     setLogin(false);
   }
@@ -22,7 +21,7 @@ function NavBar({ setLogin }) {
           <h2 className="LogoLabel">BURNT</h2>
         </div>
         <select className="Dropdown"></select>&nbsp;
-        <input className="SearchBar" type="text" placeholder="Find a Movie." />
+        <SearchBar setMovie={setMovie} />
         &nbsp;
         <div className="user-container">
           <FaCircleUser size={30} />
@@ -31,9 +30,6 @@ function NavBar({ setLogin }) {
           <button className="LogoutButton">LOGOUT</button>
         </form>
       </div>
-
-      {/* <Trending />
-      <MovieList /> */}
     </div>
   );
 }

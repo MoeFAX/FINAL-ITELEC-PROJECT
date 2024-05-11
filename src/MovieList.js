@@ -1,14 +1,13 @@
 import Movies from "./Movies";
-import { trendData } from "./TrendingData";
-import TrendMovie from "./TrendMovie";
 import "./MovieList.css";
-function MovieList() {
+
+function MovieList({ movie }) {
   return (
     <div className="MovieContainer">
       <p>MOVIES</p>
       <div className="MovieList">
-        {trendData.map((movie) => (
-          <Movies movieObj={movie} key={movie.no} />
+        {movie.map((movie) => (
+          <Movies movieObj={movie} key={movie.id} />
         ))}
       </div>
     </div>

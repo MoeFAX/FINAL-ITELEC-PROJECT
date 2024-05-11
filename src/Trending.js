@@ -1,14 +1,15 @@
 import "./Trending.css";
-import { trendData } from "./TrendingData";
+//import { trendData } from "./TrendingData";
 import TrendMovie from "./TrendMovie";
+//import { useState } from "react";
 
-function Trending() {
+function Trending({ trend }) {
   return (
     <div className="Trending">
       <p>TRENDING</p>
       <div className="TrendingList">
-        {trendData.map((trend) => (
-          <TrendMovie trendObj={trend} key={trend.no} />
+        {trend.map((trend) => (
+          <TrendMovie trendObj={trend} key={trend.id} />
         ))}
       </div>
     </div>

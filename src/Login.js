@@ -2,9 +2,28 @@ import { useState } from "react";
 import { users } from "./UserData";
 import "./Login.css";
 
-function Login({ setLogin }) {
+function Login({ setLogin, setTrend, API_KEY }) {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
+
+  async function showTrending() {
+    const trendingParameters = {
+      method: "GET",
+      headers: {
+        accept: "application/json",
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhMmI1NGU1YmQ0MmFkNGRjNGVjODdmZGE3MTY0MTA3ZCIsInN1YiI6IjY2M2U0MDY0ODdjYmM2ZjU0ZmRhYTU1YiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.U9UMHWm2iPrWDJufE9d3kvcWkpkRFpINMbdsimV0YzQ",
+      },
+    };
+
+    await fetch(
+      "https://api.themoviedb.org/3/trending/all/week?api_key=" + API_KEY,
+      trendingParameters
+    )
+      .then((response) => response.json())
+      .then((response) => setTrend(response.results))
+      .catch((err) => console.error(err));
+  }
 
   function handleSubmit(e) {
     //Prevents Page Reload
@@ -54,7 +73,9 @@ function Login({ setLogin }) {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button className="LoginButton">LOGIN</button>
+          <button className="LoginButton" onClick={showTrending}>
+            LOGIN
+          </button>
         </form>
         <button className="ShowHideButton" onClick={togglePassword}>
           {visible ? "Hide" : "Show"}
