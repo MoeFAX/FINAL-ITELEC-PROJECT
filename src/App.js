@@ -5,7 +5,7 @@ import Trending from "./Trending";
 import MovieList from "./MovieList";
 import { useState } from "react";
 
-const API_KEY = "a2b54e5bd42ad4dc4ec87fda7164107d";
+const API_KEY = process.env.REACT_APP_API;
 
 function App() {
   const [login, setLogin] = useState(false);
