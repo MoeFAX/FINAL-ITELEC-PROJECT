@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./Trending.css";
 function TrendMovie({ trendObj, onClick }) {
   if (!trendObj) {
     return null;
@@ -21,7 +21,7 @@ function TrendMovie({ trendObj, onClick }) {
         alt={trendObj.original_title}
       ></img>
       <h3>{trendObj.title}</h3>
-      <h4>{trendObj.release_date}</h4>
+      <h4>Rating : {trendObj.vote_average}</h4>
     </div>
   );
 }

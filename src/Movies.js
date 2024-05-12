@@ -1,5 +1,7 @@
 // Movies.js
 import React, { useState } from "react";
+import React from "react";
+import { SiThemoviedatabase } from "react-icons/si";
 
 function Movies({ movieObj, setSelectedMovie }) {
   const [isHovered, setIsHovered] = useState(false);
@@ -17,27 +19,20 @@ function Movies({ movieObj, setSelectedMovie }) {
   };
 
   return (
-    <div 
-    className="moviecard" 
-    onMouseEnter={handleMouseEnter}
-    onMouseLeave={handleMouseLeave}
-    onClick={handleClick}>
-    
-      <img
-        src={
-          movieObj.poster_path === null
-            ? "pictures/duneposter.jpg"
-            : "http://image.tmdb.org/t/p/w185" + movieObj.poster_path
-        }
-        className={`img ${isHovered ? "hovered" : ""}`}
-        alt={movieObj.original_title}
-      ></img>
-      <div className={`overlay ${isHovered ? "visible" : ""}`}>
-        <button className="button">Button 1</button>
-        <button className="button">Button 2</button>
-      </div>
+    <div className="moviecard" onClick={handleClick}>
+      {movieObj.poster_path === null ? (
+        <div className="PosterPlaceholder">
+          <SiThemoviedatabase size={100} />
+        </div>
+      ) : (
+        <img
+          src={"http://image.tmdb.org/t/p/w185" + movieObj.poster_path}
+          className="img"
+          alt={movieObj.original_title}
+        ></img>
+      )}
       <h3>{movieObj.title}</h3>
-      <h4>{movieObj.release_date}</h4>
+      <h4>Rating : {movieObj.vote_average}</h4>
     </div>
   );
 }

@@ -11,7 +11,7 @@ function NavBar({ setLogin, setMovie }) {
     <div className="NavBar">
       <div className="left-section">
         <img src="pictures/navlogo.png" className="navlogo" alt="navlogo"></img>
-        <h1 className="LogoLabel">HARSHMALLOWS</h1>
+        <h1 className="LogoLabel">HarshMallows</h1>
       </div>
       <div className="right-section">
         <div className="category">

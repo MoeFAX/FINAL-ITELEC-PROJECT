@@ -17,11 +17,11 @@ function Login({ setLogin, setTrend, API_KEY }) {
     };
 
     await fetch(
-      "https://api.themoviedb.org/3/trending/all/week?api_key=" + API_KEY,
+      "https://api.themoviedb.org/3/trending/movie/week?api_key=" + API_KEY,
       trendingParameters
     )
       .then((response) => response.json())
-      .then((response) => setTrend(response.results))
+      .then((response) => setTrend(response.results.slice(0, 10)))
       .catch((err) => console.error(err));
   }
 

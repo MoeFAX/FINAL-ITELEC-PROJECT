@@ -21,7 +21,7 @@ function SearchBar({ setMovie, setMovieResults, API_KEY }) {
       movieParameters
     )
       .then((response) => response.json())
-      .then((response) => setMovie(response.results))
+      .then((response) => setMovie(response.results.slice(0, 10)))
       .catch((err) => console.error(err));
   }
 

@@ -1,25 +1,41 @@
-@import url("https://fonts.cdnfonts.com/css/more-sugar");
-
+@import url("https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
 .Trending p {
   top: 20px;
   right: 655px;
-  font-family: "More Sugar", sans-serif;
+  font-family: "Poetsen One", sans-serif;
   font-size: 20px;
+  margin-left: 80px;
 }
 
-.img {
+.trendcard img {
   border-radius: 5px;
-  width: 150px;
-  height: 180px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  width: 210px;
+  height: 240px;
+  object-fit: cover;
 }
 
 .TrendingList {
-  margin-top: 100px;
-  display: flex;
+  margin-top: -30px;
   justify-content: center;
-  position: relative;
+  display: grid;
+  /*overflow-x: auto;*/
+
+  padding-bottom: 5px;
+  /*position: relative;
   top: 10px;
-  right: 30px;
+  right: 30px;*/
+  grid-template-columns: repeat(5, 250px);
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
+  padding-right: 30px;
+}
+
+.scrollcontainer {
+  width: 200px;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .trendcard {
@@ -28,16 +44,22 @@
   margin: 20px;
   width: 200px;
   display: inline-block;
-  position: relative;
-  bottom: 100px;
-}
-
-.trendcard h3 {
-  position: relative;
-  bottom: 20px;
+  margin-top: 20px;
+  margin-bottom: 150px;
+  height: 130px;
 }
 
 .trendcard h4 {
-  position: relative;
-  bottom: 40px;
+  /*position: relative;
+  bottom: 40px;*/
+  margin-top: -20px;
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.trendcard h3 {
+  margin-top: 5px;
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
 }

@@ -34,6 +34,7 @@ function App() {
             <div className="TrendContainer">
               <Trending trend={trend} onMovieClick={handleMovieClick} />
             </div>
+
             <div className="MovContainer">
               <MovieList movie={movie} setSelectedMovie={setSelectedMovie} />
             </div>
