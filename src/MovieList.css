@@ -32,6 +32,11 @@
   display: inline-block;
   position: relative;
   bottom: 100px;
+  transition: transform 0.2s; /* Transition for hover effect */
+}
+
+.moviecard:hover {
+  transform: scale(1.05); /* Hover effect */
 }
 
 .moviecard h3 {
