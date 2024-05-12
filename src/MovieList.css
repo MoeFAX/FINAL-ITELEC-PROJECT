@@ -60,27 +60,12 @@
   margin: 20px;
   width: 200px;
   display: inline-block;
-  position: relative;
-  bottom: 100px;
-  transition: transform 0.2s; /* Transition for hover effect */
-}
-
-.moviecard:hover {
-  transform: scale(1.05); /* Hover effect */
-  margin-top: 20px;
-  margin-bottom: 150px;
-  height: 130px;
-  /*position: relative;
-  bottom: 100px;*/
 }
 
 .moviecard h3 {
   margin-top: 5px;
   font-family: "Quicksand", sans-serif;
   font-weight: bold;
-
-  /*position: relative;
-  bottom: 20px;*/
 }
 
 .moviecard h4 {
@@ -88,7 +73,8 @@
   font-size: 14px;
   font-family: "Quicksand", sans-serif;
   font-weight: bold;
-
-  /*position: relative;
-  bottom: 40px;*/
+}
+.moviecard:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
 }

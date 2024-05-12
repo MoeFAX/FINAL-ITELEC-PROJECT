@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Trending.css";
+
 function TrendMovie({ trendObj, onClick }) {
+  const [isHovered, setIsHovered] = useState(false);
+
   if (!trendObj) {
     return null;
   }
@@ -9,8 +12,34 @@ function TrendMovie({ trendObj, onClick }) {
     onClick(trendObj);
   };
 
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
+  const getTitle = () => {
+    if (trendObj.title.length > 15 && isHovered) {
+      return (
+        <marquee direction="left" behavior="scroll" scrollamount="1000">
+          {trendObj.title}
+        </marquee>
+      );
+    }
+    return trendObj.title.length > 15
+      ? trendObj.title.slice(0, 15) + "..."
+      : trendObj.title;
+  };
+
   return (
-    <div className="trendcard" onClick={handleClick}>
+    <div
+      className="trendcard"
+      onClick={handleClick}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       <img
         src={
           trendObj.poster_path
@@ -20,8 +49,8 @@ function TrendMovie({ trendObj, onClick }) {
         className="img"
         alt={trendObj.original_title}
       ></img>
-      <h3>{trendObj.title}</h3>
-      <h4>Rating : {trendObj.vote_average}</h4>
+      <h3>{getTitle()}</h3>
+      <h4>Rating : {trendObj.vote_average}/10</h4>
     </div>
   );
 }

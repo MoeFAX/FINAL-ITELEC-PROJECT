@@ -4,7 +4,7 @@ import NavBar from "./NavBar";
 import Trending from "./Trending";
 import MovieList from "./MovieList";
 import ViewMovie from "./ViewMovie";
-
+import "./App.css";
 const API_KEY = process.env.REACT_APP_API;
 
 function App() {
@@ -25,7 +25,13 @@ function App() {
     <div className="App">
       {login ? (
         selectedMovie ? (
-          <ViewMovie movie={selectedMovie} onGoBack={handleGoBack} />
+          <>
+            <NavBar setLogin={setLogin} setMovie={setMovie} movie={movie} />
+            <ViewMovie movie={selectedMovie} onGoBack={handleGoBack} />
+            <div className="MovieListBelow">
+              <MovieList movie={movie} setSelectedMovie={setSelectedMovie} />
+            </div>
+          </>
         ) : (
           <div className="HomePage">
             <div className="NavBarContainer">

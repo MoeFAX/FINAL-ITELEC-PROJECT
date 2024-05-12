@@ -1,60 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
 .ViewMovieContainer {
   display: flex;
-  align-items: center;
   padding: 20px;
   border: 1px solid #ccc;
   margin-bottom: 10px;
-  margin: 20px; /* Merged */
+  margin: 20px;
+  background-color: #a57631;
+  font-family: "Quicksand", sans-serif;
+  border-radius: 10px;
 }
 
-.ViewMovieDetailsContainer {
-  display: flex;
+.MovieColumn1 {
+  flex: 0 0 auto;
+  justify-content: center;
   align-items: center;
+  /* transform: translate(10%, 5%); */
 }
 
-.ViewMovieImage {
-  width: 200px;
-  height: 300px;
-  margin-right: 20px;
-}
-
-.ViewMovieDetails {
+.MovieColumn2 {
   flex: 1;
+  padding: 10px;
+  margin-left: 50px;
+  text-align: start;
+}
+.MovieColumn2 h2 {
+  font-family: "Quicksand", sans-serif;
 }
 
-.ViewMovieTitle {
-  font-size: 24px;
-  font-weight: bold;
+.MovieColumn3 {
+  flex-basis: 5%;
+}
+
+.MovieImage {
+  display: flex;
+}
+
+.MovieImage img {
+  max-width: 100%;
+}
+
+.Divider {
+  border-top: 1px solid #582f07;
+  margin-top: 10px;
   margin-bottom: 10px;
 }
-
-.ViewMovieDescription {
-  font-size: 16px;
-  line-height: 1.5;
+.buttons {
+  display: flex;
 }
-
-.ViewMovieSeparator {
-  margin: 20px 0;
-  border-top: 1px solid #ccc;
-}
-
-.ViewMovieAdditionalDetails {
-  font-size: 14px;
-}
-
-.AddToFavoritesButton {
+.Favorites {
   display: block;
-  width: 100%;
+  width: 200px;
   padding: 10px;
-  font-size: 16px;
-  background-color: #007bff;
-  color: #fff;
+  margin-top: 10px;
+  color: black;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  font-size: 20px;
+  background-color: rgb(199, 207, 169);
+}
+.Burnt {
+  display: block;
+  width: 200px;
+  padding: 10px;
+  margin-top: 10px;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  margin-left: 10px;
+  background-color: rgb(161, 73, 0);
 }
 
-.AddToFavoritesButton:hover {
-  background-color: #0056b3;
+.Return {
+  display: block;
+  width: 200px;
+  padding: 10px;
+  margin-top: 10px;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  margin-left: 20px;
 }

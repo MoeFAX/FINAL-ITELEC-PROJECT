@@ -1,10 +1,12 @@
-// Movies.js
 import React, { useState } from "react";
-import React from "react";
 import { SiThemoviedatabase } from "react-icons/si";
 
-function Movies({ movieObj, setSelectedMovie }) {
+function MovieCard({ movieObj, setSelectedMovie }) {
   const [isHovered, setIsHovered] = useState(false);
+
+  const handleClick = () => {
+    setSelectedMovie(movieObj);
+  };
 
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -14,12 +16,26 @@ function Movies({ movieObj, setSelectedMovie }) {
     setIsHovered(false);
   };
 
-  const handleClick = () => {
-    setSelectedMovie(movieObj);
+  const getTitle = () => {
+    if (movieObj.title.length > 15 && isHovered) {
+      return (
+        <marquee direction="left" behavior="scroll" scrollamount="1">
+          {movieObj.title}
+        </marquee>
+      );
+    }
+    return movieObj.title.length > 15
+      ? movieObj.title.slice(0, 15) + "..."
+      : movieObj.title;
   };
 
   return (
-    <div className="moviecard" onClick={handleClick}>
+    <div
+      className="moviecard"
+      onClick={handleClick}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       {movieObj.poster_path === null ? (
         <div className="PosterPlaceholder">
           <SiThemoviedatabase size={100} />
@@ -31,10 +47,10 @@ function Movies({ movieObj, setSelectedMovie }) {
           alt={movieObj.original_title}
         ></img>
       )}
-      <h3>{movieObj.title}</h3>
-      <h4>Rating : {movieObj.vote_average}</h4>
+      <h3>{getTitle()}</h3>
+      <h4>Rating : {movieObj.vote_average}/10</h4>
     </div>
   );
 }
 
-export default Movies;
+export default MovieCard;
