@@ -1,6 +1,10 @@
 import { FaCircleUser } from "react-icons/fa6";
 import "./NavBar.css";
 import SearchBar from "./SearchBar";
+import HandleHome from "./HandleHome";
+import HandleSmores from "./HandleSmores";
+import HandleBurnt from "./HandleBurnt";
+import HandleLogout from "./HandleLogout";
 
 function NavBar({ setLogin, setMovie, smores, setSmores, burnt, setBurnt }) {
   function handleLogout() {
@@ -42,9 +46,10 @@ function NavBar({ setLogin, setMovie, smores, setSmores, burnt, setBurnt }) {
         <div className="user-container">
           <FaCircleUser size={30} />
         </div>
-        <form className="LogoutForm" onSubmit={handleLogout}>
+        {/* <form className="LogoutForm" onSubmit={handleLogout}>
           <button className="LogoutButton">LOGOUT</button>
-        </form>
+        </form> */}
+        <HandleLogout handleLogout={handleLogout} />
       </div>
     </div>
   );
