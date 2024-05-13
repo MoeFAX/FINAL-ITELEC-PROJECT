@@ -14,8 +14,6 @@ function App() {
   const [movie, setMovie] = useState([]);
   const [trend, setTrend] = useState([]);
   const [selectedMovie, setSelectedMovie] = useState(null);
-  const [smores, setSmores] = useState(false);
-  const [burnt, setBurnt] = useState(false);
 
   const handleMovieClick = (movie) => {
     setSelectedMovie(movie);
@@ -30,14 +28,7 @@ function App() {
       {login ? (
         selectedMovie ? (
           <>
-            <NavBar
-              setLogin={setLogin}
-              setMovie={setMovie}
-              smores={smores}
-              setSmores={setSmores}
-              burnt={burnt}
-              setBurnt={setBurnt}
-            />
+            <NavBar setLogin={setLogin} setMovie={setMovie} />
             <ViewMovie movie={selectedMovie} onGoBack={handleGoBack} />
             <div className="MovieListBelow">
               <MovieList movie={movie} setSelectedMovie={setSelectedMovie} />

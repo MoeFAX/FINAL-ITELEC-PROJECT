@@ -6,23 +6,9 @@ import HandleSmores from "./HandleSmores";
 import HandleBurnt from "./HandleBurnt";
 import HandleLogout from "./HandleLogout";
 
-function NavBar({ setLogin, setMovie, smores, setSmores, burnt, setBurnt }) {
+function NavBar({ setLogin, setMovie }) {
   function handleLogout() {
     setLogin(false);
-  }
-
-  function handleSmores() {
-    if (smores === false) {
-      setBurnt(false);
-      setSmores(true);
-    }
-  }
-
-  function handleBurnt() {
-    if (burnt === false) {
-      setSmores(false);
-      setBurnt(true);
-    }
   }
 
   return (
@@ -34,11 +20,9 @@ function NavBar({ setLogin, setMovie, smores, setSmores, burnt, setBurnt }) {
       <div className="right-section">
         <div className="category">
           <img src="pictures/smores.png" className="smores" alt="smores"></img>
-          {/* <h2 className="LogoLabel">S'MORES</h2> */}
-          <button onClick={() => handleSmores()}>Smores</button>
+          <h2 className="LogoLabel">S'MORES</h2>
           <img src="pictures/burnt.png" className="burnt" alt="burnt"></img>
-          {/* <h2 className="LogoLabel">BURNT</h2> */}
-          <button onClick={() => handleBurnt()}>Burnt</button>
+          <h2 className="LogoLabel">BURNT</h2>
         </div>
         <select className="Dropdown"></select>&nbsp;
         <SearchBar setMovie={setMovie} />
