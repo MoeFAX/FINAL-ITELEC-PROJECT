@@ -1,9 +1,15 @@
 import React from "react";
 import "./NavBar.css";
+import SearchBar from "./SearchBar";
 import { FaCircleUser } from "react-icons/fa6";
 
 function NavBar({
   setLogin,
+  setMovie,
+  // smores,
+  // setSmores,
+  // burnt,
+  // setBurnt,
   handleShowSmoresList,
   handleShowBurntList,
   handleShowHome,
@@ -27,7 +33,7 @@ function NavBar({
           <img src="pictures/burnt.png" className="burnt" alt="burnt"></img>
           <button className={"burntbtn"}onClick={handleShowBurntList}>Burnt</button>
         </div>
-        &nbsp;
+        <SearchBar setMovie={setMovie} />
         <div className="user-container">
           <FaCircleUser size={30} />
         </div>

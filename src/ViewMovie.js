@@ -1,5 +1,6 @@
 import React from "react";
 import "./ViewMovie.css";
+import { SiThemoviedatabase } from "react-icons/si";
 
 function ViewMovie({ movie, onGoBack, addToSmores, addToBurnt }) {
   const handleGoBack = () => {
@@ -23,14 +24,17 @@ function ViewMovie({ movie, onGoBack, addToSmores, addToBurnt }) {
         <div className="ViewMovieContainer">
           <div className="MovieColumn1">
             <div className="MovieImage">
-              <img
-                src={
-                  movie.poster_path === null
-                    ? "pictures/duneposter.jpg"
-                    : "http://image.tmdb.org/t/p/w185" + movie.poster_path
-                }
-                alt={movie.original_title}
-              />
+            {movie.poster_path === null ? (
+        <div className="PosterPlaceholder">
+          <SiThemoviedatabase size={100} />
+        </div>
+      ) : (
+        <img
+          src={"http://image.tmdb.org/t/p/w185" + movie.poster_path}
+          className="img"
+          alt={movie.original_title}
+        />
+      )}
             </div>
           </div>
           <div className="MovieColumn2">

@@ -1,5 +1,5 @@
-import "./BurntList.css"
 import Burnt from "./Burnt";
+import "./BurntList.css"
 
 function BurntList({ burnt, setSelectedMovie }) {
   return (

@@ -14,7 +14,7 @@ function Burnt({ movieObj, setSelectedMovie }) {
 
   return (
     <div
-      className="burnt"
+      className="burntcard"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
