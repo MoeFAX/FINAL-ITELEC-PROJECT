@@ -1,13 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
 
-.MovieContainer p {
+/* .MovieContainer p {
   top: 20px;
   right: 655px;
   font-family: "Poetsen One", sans-serif;
   font-size: 20px;
   margin-left: 80px;
-}
+} */
 
 .MovieContainer {
   margin-top: 100px;

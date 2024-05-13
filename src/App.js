@@ -4,6 +4,8 @@ import NavBar from "./NavBar";
 import Trending from "./Trending";
 import MovieList from "./MovieList";
 import ViewMovie from "./ViewMovie";
+import SmoresList from "./SmoresList";
+import BurntList from "./BurntList";
 import "./App.css";
 const API_KEY = process.env.REACT_APP_API;
 
@@ -12,6 +14,8 @@ function App() {
   const [movie, setMovie] = useState([]);
   const [trend, setTrend] = useState([]);
   const [selectedMovie, setSelectedMovie] = useState(null);
+  const [smores, setSmores] = useState(false);
+  const [burnt, setBurnt] = useState(false);
 
   const handleMovieClick = (movie) => {
     setSelectedMovie(movie);
@@ -26,7 +30,14 @@ function App() {
       {login ? (
         selectedMovie ? (
           <>
-            <NavBar setLogin={setLogin} setMovie={setMovie} movie={movie} />
+            <NavBar
+              setLogin={setLogin}
+              setMovie={setMovie}
+              smores={smores}
+              setSmores={setSmores}
+              burnt={burnt}
+              setBurnt={setBurnt}
+            />
             <ViewMovie movie={selectedMovie} onGoBack={handleGoBack} />
             <div className="MovieListBelow">
               <MovieList movie={movie} setSelectedMovie={setSelectedMovie} />
