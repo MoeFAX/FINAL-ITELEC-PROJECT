@@ -1,14 +1,21 @@
 import React from "react";
 import "./ViewMovie.css";
 
-function ViewMovie({ movie, onGoBack }) {
+function ViewMovie({ movie, onGoBack, addToSmores, addToBurnt }) {
   const handleGoBack = () => {
     onGoBack();
   };
 
+  const handleAddToSmores = () => {
+    addToSmores(movie);
+  };
+
+  const handleAddToBurnt = () => {
+    addToBurnt(movie);
+  };
+
   return (
     <>
-      {" "}
       <button className="Return" onClick={handleGoBack}>
         Return
       </button>
@@ -35,8 +42,12 @@ function ViewMovie({ movie, onGoBack }) {
             <p> Rating: {movie.vote_average}/10</p>
             <div className="Divider"></div>
             <div className="buttons">
-              <button className="Favorites">Add to Smores</button>{" "}
-              <button className="Burnt">Add to Burnt</button>
+              <button className="Favorites" onClick={handleAddToSmores}>
+                Add to Smores
+              </button>{" "}
+              <button className="Burnt" onClick={handleAddToBurnt}>
+                Add to Burnt
+              </button>
             </div>
           </div>
           <div className="MovieColumn3"></div>

@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
+.SmoresContainer p {
+  top: 20px;
+  right: 655px;
+  font-family: "Poetsen One", sans-serif;
+  font-size: 20px;
+  margin-left: 80px;
+}
+
+.SmoresContainer {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+}
+.smorescard img {
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  width: 210px;
+  height: 240px;
+  object-fit: cover;
+}
+
+.PosterPlaceholder {
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  width: 210px;
+  height: 240px;
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.SmoresList {
+  margin-top: -30px;
+  justify-content: center;
+  display: grid;
+  /*overflow-x: auto;*/
+
+  padding-bottom: 5px;
+  /*position: relative;
+  top: 10px;
+  right: 30px;*/
+  grid-template-columns: repeat(5, 250px);
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
+  padding-right: 30px;
+  /*overflow-x: auto;*/
+
+  /*position: relative;
+  top: 10px;
+  right: 30px;*/
+}
+
+.smorescard {
+  border-radius: 10px;
+  padding: 2px;
+  margin: 20px;
+  width: 200px;
+  display: inline-block;
+}
+
+.smorescard h3 {
+  margin-top: 5px;
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+}
+
+.smorescard h4 {
+  margin-top: -20px;
+  font-size: 14px;
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+}
+.smorescard:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}

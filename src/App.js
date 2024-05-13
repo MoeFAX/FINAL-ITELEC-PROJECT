@@ -14,6 +14,10 @@ function App() {
   const [movie, setMovie] = useState([]);
   const [trend, setTrend] = useState([]);
   const [selectedMovie, setSelectedMovie] = useState(null);
+  const [smores, setSmores] = useState([]);
+  const [burnt, setBurnt] = useState([]);
+  const [showSmoresList, setShowSmoresList] = useState(false);
+  const [showBurntList, setShowBurntList] = useState(false);
 
   const handleMovieClick = (movie) => {
     setSelectedMovie(movie);
@@ -23,15 +27,48 @@ function App() {
     setSelectedMovie(null);
   };
 
+  const addToSmores = (movie) => {
+    setSmores([...smores, movie]);
+  };
+
+  const addToBurnt = (movie) => {
+    setBurnt([...burnt, movie]);
+  };
+
+  const handleShowSmoresList = () => {
+    setShowSmoresList(true);
+    setShowBurntList(false);
+  };
+
+  const handleShowBurntList = () => {
+    setShowSmoresList(false);
+    setShowBurntList(true);
+  };
+
   return (
     <div className="App">
       {login ? (
         selectedMovie ? (
           <>
-            <NavBar setLogin={setLogin} setMovie={setMovie} />
-            <ViewMovie movie={selectedMovie} onGoBack={handleGoBack} />
+            <NavBar
+              setLogin={setLogin}
+              setMovie={setMovie}
+              smores={smores}
+              setSmores={setSmores}
+              burnt={burnt}
+              setBurnt={setBurnt}
+              handleShowSmoresList={handleShowSmoresList}
+              handleShowBurntList={handleShowBurntList}
+            />
+            <ViewMovie
+              movie={selectedMovie}
+              onGoBack={handleGoBack}
+              addToSmores={addToSmores}
+              addToBurnt={addToBurnt}
+            />
             <div className="MovieListBelow">
-              <MovieList movie={movie} setSelectedMovie={setSelectedMovie} />
+              {/* <MovieList movie={movie} setSelectedMovie={setSelectedMovie} /> */}
+              <SmoresList smores={smores} />
             </div>
           </>
         ) : (
@@ -51,6 +88,12 @@ function App() {
       ) : (
         <Login setLogin={setLogin} setTrend={setTrend} apiKey={API_KEY} />
       )}
+      {showSmoresList && (
+        <div className="SmorContain">
+          <SmoresList smores={smores} />
+        </div>
+      )}
+      {showBurntList && <BurntList burnt={burnt} />}
     </div>
   );
 }
