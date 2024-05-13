@@ -1,8 +1,18 @@
-import { FaCircleUser } from "react-icons/fa6";
+import React from "react";
 import "./NavBar.css";
 import SearchBar from "./SearchBar";
+import { FaCircleUser } from "react-icons/fa6";
 
-function NavBar({ setLogin, setMovie, smores, setSmores, burnt, setBurnt }) {
+function NavBar({
+  setLogin,
+  setMovie,
+  smores,
+  setSmores,
+  burnt,
+  setBurnt,
+  handleShowSmoresList,
+  handleShowBurntList,
+}) {
   function handleLogout() {
     setLogin(false);
   }
@@ -30,11 +40,9 @@ function NavBar({ setLogin, setMovie, smores, setSmores, burnt, setBurnt }) {
       <div className="right-section">
         <div className="category">
           <img src="pictures/smores.png" className="smores" alt="smores"></img>
-          {/* <h2 className="LogoLabel">S'MORES</h2> */}
-          <button onClick={() => handleSmores()}>Smores</button>
+          <button onClick={handleShowSmoresList}>Smores</button>
           <img src="pictures/burnt.png" className="burnt" alt="burnt"></img>
-          {/* <h2 className="LogoLabel">BURNT</h2> */}
-          <button onClick={() => handleBurnt()}>Burnt</button>
+          <button onClick={handleShowBurntList}>Burnt</button>
         </div>
         <select className="Dropdown"></select>&nbsp;
         <SearchBar setMovie={setMovie} />
@@ -49,4 +57,5 @@ function NavBar({ setLogin, setMovie, smores, setSmores, burnt, setBurnt }) {
     </div>
   );
 }
+
 export default NavBar;
