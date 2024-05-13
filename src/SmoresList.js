@@ -1,4 +1,4 @@
-import React from "react";
+import "./SmoresList.css"
 import Smores from "./Smores";
 
 function SmoresList({ smores, setSelectedMovie }) {

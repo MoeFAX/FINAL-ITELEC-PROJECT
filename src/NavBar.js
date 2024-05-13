@@ -1,15 +1,9 @@
 import React from "react";
 import "./NavBar.css";
-import SearchBar from "./SearchBar";
 import { FaCircleUser } from "react-icons/fa6";
 
 function NavBar({
   setLogin,
-  setMovie,
-  // smores,
-  // setSmores,
-  // burnt,
-  // setBurnt,
   handleShowSmoresList,
   handleShowBurntList,
   handleShowHome,
@@ -21,20 +15,18 @@ function NavBar({
   return (
     <div className="NavBar">
       <div className="left-section">
-        <img src="pictures/navlogo.png" className="navlogo" alt="navlogo"></img>
+        <img src="pictures/newlogologin.png" className="navlogo" alt="navlogo"></img>
         <h1 className="LogoLabel">HarshMallows</h1>
       </div>
       <div className="right-section">
         <div className="category">
+          <img src="pictures/house.png" className="home" alt="smores"></img>
+          <button className={"homebtn"} onClick={handleShowHome}>Home</button>
           <img src="pictures/smores.png" className="smores" alt="smores"></img>
-          <button onClick={handleShowHome}>Home</button>
-          <img src="pictures/smores.png" className="smores" alt="smores"></img>
-          <button onClick={handleShowSmoresList}>Smores</button>
+          <button className={"smoresbtn"} onClick={handleShowSmoresList}>Smores</button>
           <img src="pictures/burnt.png" className="burnt" alt="burnt"></img>
-          <button onClick={handleShowBurntList}>Burnt</button>
+          <button className={"burntbtn"}onClick={handleShowBurntList}>Burnt</button>
         </div>
-        <select className="Dropdown"></select>&nbsp;
-        <SearchBar setMovie={setMovie} />
         &nbsp;
         <div className="user-container">
           <FaCircleUser size={30} />

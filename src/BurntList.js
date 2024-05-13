@@ -1,4 +1,4 @@
-import React from "react";
+import "./BurntList.css"
 import Burnt from "./Burnt";
 
 function BurntList({ burnt, setSelectedMovie }) {

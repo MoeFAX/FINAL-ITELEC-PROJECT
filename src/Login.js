@@ -56,7 +56,7 @@ function Login({ setLogin, setTrend, API_KEY }) {
   return (
     <div className="LoginContainer">
       <div className="LoginCard">
-        <img src="pictures/logo.png" className="logo" alt="logo"></img>
+        <img src="pictures/newlogo.png" className="logo" alt="logo"></img>
         <h1>Harshmallows</h1>
         <form className="LoginForm" onSubmit={handleSubmit}>
           <label>Username</label>
