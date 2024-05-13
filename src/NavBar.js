@@ -6,12 +6,13 @@ import { FaCircleUser } from "react-icons/fa6";
 function NavBar({
   setLogin,
   setMovie,
-  smores,
-  setSmores,
-  burnt,
-  setBurnt,
+  // smores,
+  // setSmores,
+  // burnt,
+  // setBurnt,
   handleShowSmoresList,
   handleShowBurntList,
+  handleShowHome,
 }) {
   function handleLogout() {
     setLogin(false);
@@ -26,6 +27,8 @@ function NavBar({
       <div className="right-section">
         <div className="category">
           <img src="pictures/smores.png" className="smores" alt="smores"></img>
+          <button onClick={handleShowHome}>Home</button>
+          <img src="pictures/smores.png" className="smores" alt="smores"></img>
           <button onClick={handleShowSmoresList}>Smores</button>
           <img src="pictures/burnt.png" className="burnt" alt="burnt"></img>
           <button onClick={handleShowBurntList}>Burnt</button>
@@ -36,10 +39,11 @@ function NavBar({
         <div className="user-container">
           <FaCircleUser size={30} />
         </div>
-        {/* <form className="LogoutForm" onSubmit={handleLogout}>
-          <button className="LogoutButton">LOGOUT</button>
-        </form> */}
-        <HandleLogout handleLogout={handleLogout} />
+        {/* <form className="LogoutForm" onSubmit={handleLogout}> */}
+        <button className="LogoutButton" onClick={handleLogout}>
+          LOGOUT
+        </button>
+        {/* </form> */}
       </div>
     </div>
   );

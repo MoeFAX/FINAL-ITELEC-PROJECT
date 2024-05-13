@@ -18,6 +18,7 @@ function App() {
   const [burnt, setBurnt] = useState([]);
   const [showSmoresList, setShowSmoresList] = useState(false);
   const [showBurntList, setShowBurntList] = useState(false);
+  const [showHome, setShowHome] = useState(true);
 
   const handleMovieClick = (movie) => {
     setSelectedMovie(movie);
@@ -28,21 +29,64 @@ function App() {
   };
 
   const addToSmores = (movie) => {
-    setSmores([...smores, movie]);
+    const isMovieInSmores = smores.some(
+      (smoresMovie) => smoresMovie.id === movie.id
+    );
+    const isMovieInBurnt = burnt.some(
+      (burntMovie) => burntMovie.id === movie.id
+    );
+    const id = movie.id;
+    if (!isMovieInSmores && isMovieInBurnt) {
+      setBurnt(burnt.filter((movie) => movie.id !== id));
+      setSmores([...smores, movie]);
+      //console.log(smores);
+    } else if (isMovieInSmores && !isMovieInBurnt) {
+      console.log(smores);
+    } else {
+      setSmores([...smores, movie]);
+      console.log(smores);
+    }
   };
 
   const addToBurnt = (movie) => {
-    setBurnt([...burnt, movie]);
+    const isMovieInBurnt = burnt.some(
+      (burntMovie) => burntMovie.id === movie.id
+    );
+    const isMovieInSmores = smores.some(
+      (smoresMovie) => smoresMovie.id === movie.id
+    );
+    const id = movie.id;
+    if (!isMovieInBurnt && isMovieInSmores) {
+      setSmores(smores.filter((movie) => movie.id !== id));
+      setBurnt([...burnt, movie]);
+      //console.log(burnt);
+    } else if (isMovieInBurnt && !isMovieInSmores) {
+      console.log(burnt);
+    } else {
+      setBurnt([...burnt, movie]);
+      console.log(burnt);
+    }
   };
 
   const handleShowSmoresList = () => {
     setShowSmoresList(true);
     setShowBurntList(false);
+    setShowHome(false);
+    console.log(showSmoresList, showBurntList, showHome);
   };
 
   const handleShowBurntList = () => {
     setShowSmoresList(false);
     setShowBurntList(true);
+    setShowHome(false);
+    console.log(showSmoresList, showBurntList, showHome);
+  };
+
+  const handleShowHome = () => {
+    setShowSmoresList(false);
+    setShowBurntList(false);
+    setShowHome(true);
+    console.log(showSmoresList, showBurntList, showHome);
   };
 
   return (
@@ -59,6 +103,7 @@ function App() {
               setBurnt={setBurnt}
               handleShowSmoresList={handleShowSmoresList}
               handleShowBurntList={handleShowBurntList}
+              handleShowHome={handleShowHome}
             />
             <ViewMovie
               movie={selectedMovie}
@@ -67,33 +112,52 @@ function App() {
               addToBurnt={addToBurnt}
             />
             <div className="MovieListBelow">
-              {/* <MovieList movie={movie} setSelectedMovie={setSelectedMovie} /> */}
-              <SmoresList smores={smores} />
+              {showHome ? (
+                <MovieList movie={movie} setSelectedMovie={setSelectedMovie} />
+              ) : showSmoresList ? (
+                <SmoresList smores={smores} />
+              ) : showBurntList ? (
+                <BurntList burnt={burnt} />
+              ) : (
+                ""
+              )}
             </div>
           </>
         ) : (
           <div className="HomePage">
             <div className="NavBarContainer">
-              <NavBar setLogin={setLogin} setMovie={setMovie} movie={movie} />
+              <NavBar
+                ssetLogin={setLogin}
+                setMovie={setMovie}
+                smores={smores}
+                setSmores={setSmores}
+                burnt={burnt}
+                setBurnt={setBurnt}
+                handleShowSmoresList={handleShowSmoresList}
+                handleShowBurntList={handleShowBurntList}
+                handleShowHome={handleShowHome}
+              />
             </div>
             <div className="TrendContainer">
               <Trending trend={trend} onMovieClick={handleMovieClick} />
             </div>
 
             <div className="MovContainer">
-              <MovieList movie={movie} setSelectedMovie={setSelectedMovie} />
+              {showHome ? (
+                <MovieList movie={movie} setSelectedMovie={setSelectedMovie} />
+              ) : showSmoresList ? (
+                <SmoresList smores={smores} />
+              ) : showBurntList ? (
+                <BurntList burnt={burnt} />
+              ) : (
+                ""
+              )}
             </div>
           </div>
         )
       ) : (
         <Login setLogin={setLogin} setTrend={setTrend} apiKey={API_KEY} />
       )}
-      {showSmoresList && (
-        <div className="SmorContain">
-          <SmoresList smores={smores} />
-        </div>
-      )}
-      {showBurntList && <BurntList burnt={burnt} />}
     </div>
   );
 }
