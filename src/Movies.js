@@ -19,7 +19,7 @@ function MovieCard({ movieObj, setSelectedMovie }) {
   const getTitle = () => {
     if (movieObj.title.length > 15 && isHovered) {
       return (
-        <marquee direction="left" behavior="scroll" scrollamount="1">
+        <marquee direction="left" behavior="scroll" scrollamount="5">
           {movieObj.title}
         </marquee>
       );

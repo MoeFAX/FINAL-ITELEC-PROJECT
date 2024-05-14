@@ -23,7 +23,7 @@ function TrendMovie({ trendObj, onClick }) {
   const getTitle = () => {
     if (trendObj.title.length > 15 && isHovered) {
       return (
-        <marquee direction="left" behavior="scroll" scrollamount="1000">
+        <marquee direction="left" behavior="scroll" scrollamount="5">
           {trendObj.title}
         </marquee>
       );

@@ -4,6 +4,10 @@ import { SiThemoviedatabase } from "react-icons/si";
 function Burnt({ movieObj, setSelectedMovie }) {
   const [isHovered, setIsHovered] = useState(false);
 
+  const handleClick = () => {
+    setSelectedMovie(movieObj);
+  };
+
   const handleMouseEnter = () => {
     setIsHovered(true);
   };
@@ -12,9 +16,23 @@ function Burnt({ movieObj, setSelectedMovie }) {
     setIsHovered(false);
   };
 
+  const getTitle = () => {
+    if (movieObj.title.length > 15 && isHovered) {
+      return (
+        <marquee direction="left" behavior="scroll" scrollamount="5">
+          {movieObj.title}
+        </marquee>
+      );
+    }
+    return movieObj.title.length > 15
+      ? movieObj.title.slice(0, 15) + "..."
+      : movieObj.title;
+  };
+
   return (
     <div
       className="burntcard"
+      onClick={handleClick}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -29,6 +47,8 @@ function Burnt({ movieObj, setSelectedMovie }) {
           alt={movieObj.original_title}
         />
       )}
+      <h3>{getTitle()}</h3>
+      <h4>Rating : {movieObj.vote_average}/10</h4>
     </div>
   );
 }

@@ -32,38 +32,38 @@
   margin-bottom: 1px;
 }
 
-.smoresbtn{
+.smoresbtn {
   display: block;
   padding: 5px 5px;
-  color: black;
+  color: #582f07;
   border: 1px;
   border-radius: 4px;
   cursor: pointer;
-  background-color:#bfdbe4;
+  background-color: #bfdbe4;
   font-family: "Quicksand", sans-serif;
   font-weight: bold;
 }
 
-.burntbtn{
+.burntbtn {
   display: block;
   padding: 5px 5px;
-  color: black;
+  color: #bfdbe4;
   border: 1px;
   border-radius: 4px;
   cursor: pointer;
-  background-color: #a57631;
+  background-color: #582f07;
   font-family: "Quicksand", sans-serif;
   font-weight: bold;
 }
 
-.homebtn{
+.homebtn {
   display: block;
   padding: 5px 5px;
   color: black;
   border: 1px;
   border-radius: 4px;
   cursor: pointer;
-  background-color: rgb(199, 207, 169);
+  background-color: #eff0cd;
   margin-right: 10px;
   font-family: "Quicksand", sans-serif;
   font-weight: bold;
@@ -79,7 +79,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 7px 20px;
-  background-color: #f0f4cc;
+  background-color: #c7ab73;
 }
 
 .category {
@@ -123,13 +123,13 @@ h2 {
   margin-right: 5px;
 }
 
-.Dropdown {
+/* .Dropdown {
   width: 80px;
   height: 31px;
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 5px;
-}
+} */
 
 .LogoutForm {
   display: flex;
@@ -144,7 +144,7 @@ h2 {
   border: 1px;
   border-radius: 4px;
   cursor: pointer;
-  background-color:#b8b8b8;
+  background-color: #eff0cd;
   font-family: "Quicksand", sans-serif;
   font-weight: bold;
 }

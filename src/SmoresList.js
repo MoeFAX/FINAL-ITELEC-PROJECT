@@ -1,11 +1,11 @@
-import "./SmoresList.css"
+import "./SmoresList.css";
 import Smores from "./Smores";
 
 function SmoresList({ smores, setSelectedMovie }) {
   return (
     <div className="SmoresContainer">
       <hr />
-      <p>SMORES</p>
+      <p>S'MORES</p>
       <div className="SmoresList">
         {smores.map((movie) => (
           <Smores

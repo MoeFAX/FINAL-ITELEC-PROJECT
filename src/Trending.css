@@ -5,7 +5,7 @@
   right: 655px;
   font-family: "Poetsen One", sans-serif;
   font-size: 20px;
-  margin-left: 80px;
+  margin-left: -1250px;
   margin-top: 50px;
 }
 
@@ -21,7 +21,7 @@
   transition: transform 0.3s ease;
 }
 .TrendingList {
-  margin-top: -30px;
+  margin-top: -80px;
   justify-content: center;
   display: grid;
   /*overflow-x: auto;*/
@@ -32,7 +32,7 @@
   right: 30px;*/
   grid-template-columns: repeat(5, 250px);
   grid-column-gap: 30px;
-  grid-row-gap: 30px;
+  grid-row-gap: 50px;
   padding-right: 30px;
 }
 
@@ -47,7 +47,7 @@
   padding: 2px;
   margin: 20px;
   width: 200px;
-  
+
   display: inline-block;
   margin-top: 75px;
   margin-bottom: 150px;

@@ -32,15 +32,15 @@ function NavBar({
         <div className="category">
           <img src="pictures/house.png" className="home" alt="smores"></img>
           <button className={"homebtn"} onClick={handleShowHome}>
-            Home
+            HOME
           </button>
           <img src="pictures/smores.png" className="smores" alt="smores"></img>
           <button className={"smoresbtn"} onClick={handleShowSmoresList}>
-            Smores
+            S'MORES
           </button>
           <img src="pictures/burnt.png" className="burnt" alt="burnt"></img>
           <button className={"burntbtn"} onClick={handleShowBurntList}>
-            Burnt
+            BURNT
           </button>
         </div>
         <SearchBar setMovie={setMovie} />

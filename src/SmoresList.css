@@ -6,7 +6,7 @@
   right: 655px;
   font-family: "Poetsen One", sans-serif;
   font-size: 20px;
-  margin-left: 80px;
+  margin-left: -1250px;
 }
 
 .SmoresContainer {
@@ -27,7 +27,7 @@
   border-radius: 5px;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
   width: 210px;
-  height: 240px;
+  height: 300px;
   object-fit: cover;
   display: flex;
   align-items: center;
@@ -46,7 +46,7 @@
   right: 30px;*/
   grid-template-columns: repeat(5, 250px);
   grid-column-gap: 30px;
-  grid-row-gap: 30px;
+  grid-row-gap: 3px;
   padding-right: 30px;
   /*overflow-x: auto;*/
 

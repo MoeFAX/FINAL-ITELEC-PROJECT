@@ -1,13 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
 .LoginContainer {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #e7ceaa;
+  background-color: #bfdbe4;
 }
 
 .LoginCard {
-  background-color: #f0f0f0;
+  background-color: #eff0cd;
   border-radius: 8px;
   padding: 20px;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
@@ -15,6 +18,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: "Poetsen One", sans-serif;
 }
 
 .LoginForm {
@@ -35,19 +39,21 @@ input {
 }
 
 .LoginButton {
-  background-color: #007bff;
-  color: white;
+  background-color: #bfdbe4;
+  color: #582f07;
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
   width: 80%;
+  font-family: "Quicksand", sans-serif;
 }
 
 .ShowHideButton {
   background-color: transparent;
   border: none;
-  color: #007bff;
+  color: #582f07;
   margin-top: 8px;
+  font-family: "Quicksand", sans-serif;
 }
 
 .logo {

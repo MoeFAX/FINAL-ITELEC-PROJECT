@@ -6,7 +6,7 @@
   border: 1px solid #ccc;
   margin-bottom: 10px;
   margin: 20px;
-  background-color: #a57631;
+  background-color: #eff0cd;
   font-family: "Quicksand", sans-serif;
   border-radius: 10px;
 }
@@ -16,7 +16,6 @@
   justify-content: center;
   align-items: center;
   /* transform: translate(10%, 5%); */
-  
 }
 
 .MovieColumn2 {
@@ -54,25 +53,27 @@
   width: 200px;
   padding: 10px;
   margin-top: 10px;
-  color: black;
+  color: #582f07;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 20px;
   background-color: #bfdbe4;
+  font-family: "Quicksand", sans-serif;
 }
 .Burnt {
   display: block;
   width: 200px;
   padding: 10px;
   margin-top: 10px;
-  color: black;
+  color: #bfdbe4;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 20px;
   margin-left: 10px;
-  background-color: #c7ab73;
+  background-color: #582f07;
+  font-family: "Quicksand", sans-serif;
 }
 
 .Return {
@@ -86,4 +87,6 @@
   cursor: pointer;
   font-size: 20px;
   margin-left: 20px;
+  background-color: #eff0cd;
+  font-family: "Quicksand", sans-serif;
 }

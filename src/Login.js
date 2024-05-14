@@ -57,7 +57,7 @@ function Login({ setLogin, setTrend, API_KEY }) {
     <div className="LoginContainer">
       <div className="LoginCard">
         <img src="pictures/newlogo.png" className="logo" alt="logo"></img>
-        <h1>Harshmallows</h1>
+        <h1>HarshMallows</h1>
         <form className="LoginForm" onSubmit={handleSubmit}>
           <label>Username</label>
           <input
@@ -78,7 +78,7 @@ function Login({ setLogin, setTrend, API_KEY }) {
           </button>
         </form>
         <button className="ShowHideButton" onClick={togglePassword}>
-          {visible ? "Hide" : "Show"}
+          {visible ? "HIDE" : "SHOW"}
         </button>
       </div>
     </div>

@@ -1,11 +1,11 @@
 import Burnt from "./Burnt";
-import "./BurntList.css"
+import "./BurntList.css";
 
 function BurntList({ burnt, setSelectedMovie }) {
   return (
     <div className="BurntContainer">
       <hr />
-      <p>BURNT</p>
+      <p className="">BURNT</p>
       <div className="BurntList">
         {burnt.map((movie) => (
           <Burnt

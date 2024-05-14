@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: #e7ceaa;
+  background-color: #f1faff;
 }
 
 .App-logo {
@@ -15,7 +15,7 @@
 }
 
 .HomePage {
-  background-color: #e7ceaa;
+  background-color: #f1faff;
   min-height: 100vh; /* Ensure the element covers the entire viewport height */
   overflow: hidden;
 }
