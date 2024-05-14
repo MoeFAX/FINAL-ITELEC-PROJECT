@@ -115,9 +115,12 @@ function App() {
               {showHome ? (
                 <MovieList movie={movie} setSelectedMovie={setSelectedMovie} />
               ) : showSmoresList ? (
-                <SmoresList smores={smores} />
+                <SmoresList
+                  smores={smores}
+                  setSelectedMovie={setSelectedMovie}
+                />
               ) : showBurntList ? (
-                <BurntList burnt={burnt} />
+                <BurntList burnt={burnt} setSelectedMovie={setSelectedMovie} />
               ) : (
                 ""
               )}
@@ -127,7 +130,7 @@ function App() {
           <div className="HomePage">
             <div className="NavBarContainer">
               <NavBar
-                ssetLogin={setLogin}
+                setLogin={setLogin}
                 setMovie={setMovie}
                 smores={smores}
                 setSmores={setSmores}
