@@ -5,13 +5,13 @@ function MovieList({ movie, setSelectedMovie }) {
   return (
     <div className="MovieContainer">
       <hr></hr>
-      <p>MOVIES</p>
+      <p>Search Results</p>
       <div className="MovieList">
-        {movie.map((movie) => (
+        {movie.map((movies) => (
           <Movies
-            movieObj={movie}
+            movieObj={movies}
             setSelectedMovie={setSelectedMovie}
-            key={movie.id}
+            key={movies.id}
           />
         ))}
       </div>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function SearchBar({ setMovie, setMovieResults, API_KEY }) {
+function SearchBar({ setMovie, API_KEY, setQueryStatus }) {
   const [query, setQuery] = useState("");
 
   async function search() {
@@ -21,8 +21,9 @@ function SearchBar({ setMovie, setMovieResults, API_KEY }) {
       movieParameters
     )
       .then((response) => response.json())
-      .then((response) => setMovie(response.results.slice(0, 10)))
+      .then((response) => setMovie(response.results))
       .catch((err) => console.error(err));
+    setQueryStatus(true);
   }
 
   return (

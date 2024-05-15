@@ -39,8 +39,8 @@ input {
 }
 
 .LoginButton {
-  background-color: #bfdbe4;
-  color: #582f07;
+  background-color: #582f07;
+  color: #bfdbe4;
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
@@ -49,10 +49,13 @@ input {
 }
 
 .ShowHideButton {
-  background-color: transparent;
-  border: none;
+  background-color: #c7ab73;
   color: #582f07;
   margin-top: 8px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  width: 30%;
   font-family: "Quicksand", sans-serif;
 }
 

@@ -6,13 +6,12 @@ import { FaCircleUser } from "react-icons/fa6";
 function NavBar({
   setLogin,
   setMovie,
-  // smores,
-  // setSmores,
-  // burnt,
-  // setBurnt,
   handleShowSmoresList,
   handleShowBurntList,
   handleShowHome,
+  setQueryStatus,
+  sortBy,
+  setSortBy,
 }) {
   function handleLogout() {
     setLogin(false);
@@ -43,9 +42,22 @@ function NavBar({
             BURNT
           </button>
         </div>
-        <SearchBar setMovie={setMovie} />
+        <div className="sortDiv">
+          <select
+            className="sortDrop"
+            value={sortBy}
+            onChange={(e) => setSortBy(e.target.value)}
+          >
+            <option value={"Top Results"}>Top Results</option>
+            <option value={"Alphabetical"}>Alphabetical</option>
+            <option value={"Top Rated"}>Top Rated</option>
+            <option value={"Latest"}>Latest</option>
+            <option value={"Oldest"}>Oldest</option>
+          </select>
+        </div>
+        <SearchBar setMovie={setMovie} setQueryStatus={setQueryStatus} />
         <div className="user-container">
-          <FaCircleUser size={30} />
+          <FaCircleUser size={30} color="#582f07" />
         </div>
         <form className="LogoutForm" onSubmit={handleLogout}>
           <button className="LogoutButton" onClick={handleLogout}>

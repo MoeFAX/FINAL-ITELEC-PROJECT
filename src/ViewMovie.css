@@ -58,6 +58,7 @@
   border-radius: 5px;
   cursor: pointer;
   font-size: 20px;
+  margin-left: 20px;
   background-color: #bfdbe4;
   font-family: "Quicksand", sans-serif;
 }
@@ -71,22 +72,37 @@
   border-radius: 5px;
   cursor: pointer;
   font-size: 20px;
-  margin-left: 10px;
+  margin-left: 20px;
   background-color: #582f07;
   font-family: "Quicksand", sans-serif;
 }
 
-.Return {
+.Reset {
   display: block;
-  width: 200px;
+  width: 150px;
   padding: 10px;
   margin-top: 10px;
   color: black;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 15px;
   margin-left: 20px;
-  background-color: #eff0cd;
+  background-color: #f1faff;
+  font-family: "Quicksand", sans-serif;
+}
+
+.Return {
+  display: block;
+  width: 150px;
+  padding: 10px;
+  margin-top: 10px;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+  margin-left: 20px;
+  background-color: #c7ab73;
   font-family: "Quicksand", sans-serif;
 }

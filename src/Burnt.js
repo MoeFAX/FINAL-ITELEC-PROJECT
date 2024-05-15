@@ -5,6 +5,7 @@ function Burnt({ movieObj, setSelectedMovie }) {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleClick = () => {
+    handleToTop();
     setSelectedMovie(movieObj);
   };
 
@@ -14,6 +15,10 @@ function Burnt({ movieObj, setSelectedMovie }) {
 
   const handleMouseLeave = () => {
     setIsHovered(false);
+  };
+
+  const handleToTop = () => {
+    window.scrollTo({ top: 0, behavior: "instant" });
   };
 
   const getTitle = () => {

@@ -19,6 +19,7 @@ function App() {
   const [showSmoresList, setShowSmoresList] = useState(false);
   const [showBurntList, setShowBurntList] = useState(false);
   const [showHome, setShowHome] = useState(true);
+  const [queryStatus, setQueryStatus] = useState(false);
 
   const handleMovieClick = (movie) => {
     setSelectedMovie(movie);
@@ -68,6 +69,20 @@ function App() {
     }
   };
 
+  const RemoveFromLists = (movie) => {
+    const isMovieInBurnt = burnt.some(
+      (burntMovie) => burntMovie.id === movie.id
+    );
+    const isMovieInSmores = smores.some(
+      (smoresMovie) => smoresMovie.id === movie.id
+    );
+    const id = movie.id;
+    if (isMovieInSmores || isMovieInBurnt) {
+      setSmores((s) => s.filter((movie) => movie.id !== id));
+      setBurnt((b) => b.filter((movie) => movie.id !== id));
+    }
+  };
+
   const handleShowSmoresList = () => {
     setShowSmoresList(true);
     setShowBurntList(false);
@@ -89,6 +104,35 @@ function App() {
     console.log(showSmoresList, showBurntList, showHome);
   };
 
+  const [sortBy, setSortBy] = useState("Top Results");
+
+  let sortedMovies;
+  if (sortBy === "Top Results") sortedMovies = movie;
+  if (sortBy === "Alphabetical")
+    sortedMovies = movie.slice().sort((a, b) => a.title.localeCompare(b.title));
+  if (sortBy === "Top Rated")
+    sortedMovies = movie
+      .slice()
+      .sort((c, d) => c.vote_average - d.vote_average)
+      .reverse();
+  if (sortBy === "Latest")
+    sortedMovies = movie
+      .slice()
+      .sort(
+        (c, d) =>
+          new Date(c.release_date).getTime() -
+          new Date(d.release_date).getTime()
+      )
+      .reverse();
+  if (sortBy === "Oldest")
+    sortedMovies = movie
+      .slice()
+      .sort(
+        (c, d) =>
+          new Date(c.release_date).getTime() -
+          new Date(d.release_date).getTime()
+      );
+
   return (
     <div className="App">
       {login ? (
@@ -104,16 +148,25 @@ function App() {
               handleShowSmoresList={handleShowSmoresList}
               handleShowBurntList={handleShowBurntList}
               handleShowHome={handleShowHome}
+              setQueryStatus={setQueryStatus}
+              sortBy={sortBy}
+              setSortBy={setSortBy}
             />
             <ViewMovie
               movie={selectedMovie}
               onGoBack={handleGoBack}
+              setSmores={setSmores}
+              setBurnt={setBurnt}
               addToSmores={addToSmores}
               addToBurnt={addToBurnt}
+              RemoveFromLists={RemoveFromLists}
             />
             <div className="MovieListBelow">
               {showHome ? (
-                <MovieList movie={movie} setSelectedMovie={setSelectedMovie} />
+                <MovieList
+                  movie={sortedMovies}
+                  setSelectedMovie={setSelectedMovie}
+                />
               ) : showSmoresList ? (
                 <SmoresList
                   smores={smores}
@@ -139,23 +192,38 @@ function App() {
                 handleShowSmoresList={handleShowSmoresList}
                 handleShowBurntList={handleShowBurntList}
                 handleShowHome={handleShowHome}
+                setQueryStatus={setQueryStatus}
+                sortBy={sortBy}
+                setSortBy={setSortBy}
               />
             </div>
-            <div className="TrendContainer">
-              <Trending trend={trend} onMovieClick={handleMovieClick} />
-            </div>
 
-            <div className="MovContainer">
-              {showHome ? (
-                <MovieList movie={movie} setSelectedMovie={setSelectedMovie} />
-              ) : showSmoresList ? (
-                <SmoresList smores={smores} />
-              ) : showBurntList ? (
-                <BurntList burnt={burnt} />
-              ) : (
-                ""
-              )}
-            </div>
+            {queryStatus ? (
+              <div className="MovContainer">
+                {showHome ? (
+                  <MovieList
+                    movie={sortedMovies}
+                    setSelectedMovie={setSelectedMovie}
+                  />
+                ) : showSmoresList ? (
+                  <SmoresList
+                    smores={smores}
+                    setSelectedMovie={setSelectedMovie}
+                  />
+                ) : showBurntList ? (
+                  <BurntList
+                    burnt={burnt}
+                    setSelectedMovie={setSelectedMovie}
+                  />
+                ) : (
+                  ""
+                )}
+              </div>
+            ) : (
+              <div className="TrendContainer">
+                <Trending trend={trend} onMovieClick={handleMovieClick} />
+              </div>
+            )}
           </div>
         )
       ) : (

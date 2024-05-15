@@ -2,9 +2,19 @@ import React from "react";
 import "./ViewMovie.css";
 import { SiThemoviedatabase } from "react-icons/si";
 
-function ViewMovie({ movie, onGoBack, addToSmores, addToBurnt }) {
+function ViewMovie({
+  movie,
+  onGoBack,
+  addToSmores,
+  addToBurnt,
+  RemoveFromLists,
+}) {
   const handleGoBack = () => {
     onGoBack();
+  };
+
+  const handleRemove = () => {
+    RemoveFromLists(movie);
   };
 
   const handleAddToSmores = () => {
@@ -15,43 +25,51 @@ function ViewMovie({ movie, onGoBack, addToSmores, addToBurnt }) {
     addToBurnt(movie);
   };
 
+  let relDate = movie.release_date;
+  let date = new Date(relDate);
+
   return (
     <>
-      <button className="Return" onClick={handleGoBack}>
-        Return
-      </button>
       {movie && (
         <div className="ViewMovieContainer">
           <div className="MovieColumn1">
             <div className="MovieImage">
-            {movie.poster_path === null ? (
-        <div className="PosterPlaceholder">
-          <SiThemoviedatabase size={100} />
-        </div>
-      ) : (
-        <img
-          src={"http://image.tmdb.org/t/p/w185" + movie.poster_path}
-          className="img"
-          alt={movie.original_title}
-        />
-      )}
+              {movie.poster_path === null ? (
+                <div className="PosterPlaceholder">
+                  <SiThemoviedatabase size={100} />
+                </div>
+              ) : (
+                <img
+                  src={"http://image.tmdb.org/t/p/w185" + movie.poster_path}
+                  className="img"
+                  alt={movie.original_title}
+                />
+              )}
             </div>
           </div>
           <div className="MovieColumn2">
             <h2>{movie.title}</h2>
             <p>{movie.overview}</p>
             <div className="Divider"></div>
-            <p> Release Date: {movie.release_date} </p>
+            <p> Release Date: {new Intl.DateTimeFormat().format(date)} </p>
             <p> Popularity: {movie.popularity}</p>
             <p> Rating: {movie.vote_average}/10</p>
             <div className="Divider"></div>
             <div className="buttons">
               <button className="Favorites" onClick={handleAddToSmores}>
-                Add to Smores
-              </button>{" "}
-              <button className="Burnt" onClick={handleAddToBurnt}>
-                Add to Burnt
+                ADD TO S'MORES
               </button>
+              <button className="Burnt" onClick={handleAddToBurnt}>
+                ADD TO BURNT
+              </button>
+              <div className="ResetReturnContainer">
+                <button className="Reset" onClick={handleRemove}>
+                  REMOVE
+                </button>
+                <button className="Return" onClick={handleGoBack}>
+                  RETURN
+                </button>
+              </div>
             </div>
           </div>
           <div className="MovieColumn3"></div>
