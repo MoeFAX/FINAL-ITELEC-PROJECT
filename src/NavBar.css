@@ -123,13 +123,20 @@ h2 {
   margin-right: 5px;
 }
 
-/* .Dropdown {
-  width: 80px;
-  height: 31px;
-  border: 1px solid #ccc;
+.sortDrop {
+  border: #eff0cd;
   border-radius: 5px;
+  appearance: none;
+  color: black;
+  background-color: #eff0cd;
   padding: 5px;
-} */
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  width: 90px;
+  margin-right: 5px;
+  height: 30px;
+}
 
 .LogoutForm {
   display: flex;

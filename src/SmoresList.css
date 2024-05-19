@@ -7,6 +7,7 @@
   font-family: "Poetsen One", sans-serif;
   font-size: 20px;
   margin-left: -1250px;
+  margin-top: -80px;
 }
 
 .SmoresContainer {
@@ -35,7 +36,7 @@
 }
 
 .SmoresList {
-  margin-top: -30px;
+  margin-top: -20px;
   justify-content: center;
   display: grid;
   /*overflow-x: auto;*/

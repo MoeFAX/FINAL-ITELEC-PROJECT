@@ -7,6 +7,7 @@
   font-family: "Poetsen One", sans-serif;
   font-size: 20px;
   margin-left: -1270px;
+  margin-top: -80px;
 }
 
 .BurntContainer {
@@ -37,7 +38,7 @@
 }
 
 .BurntList {
-  margin-top: -30px;
+  margin-top: -20px;
   justify-content: center;
   display: grid;
   /*overflow-x: auto;*/

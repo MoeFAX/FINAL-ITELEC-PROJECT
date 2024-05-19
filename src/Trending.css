@@ -1,12 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
 .Trending p {
-  top: 20px;
-  right: 655px;
   font-family: "Poetsen One", sans-serif;
   font-size: 20px;
   margin-left: -1250px;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 .trendcard img {
