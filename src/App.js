@@ -18,7 +18,7 @@ function App() {
   const [burnt, setBurnt] = useState([]);
   const [showSmoresList, setShowSmoresList] = useState(false);
   const [showBurntList, setShowBurntList] = useState(false);
-  const [showHome, setShowHome] = useState(true);
+  const [showHome, setShowHome] = useState(false);
   const [queryStatus, setQueryStatus] = useState(false);
 
   const handleMovieClick = (movie) => {
@@ -151,6 +151,7 @@ function App() {
               setQueryStatus={setQueryStatus}
               sortBy={sortBy}
               setSortBy={setSortBy}
+              setShowHome={setShowHome}
             />
             <ViewMovie
               movie={selectedMovie}
@@ -195,6 +196,7 @@ function App() {
                 setQueryStatus={setQueryStatus}
                 sortBy={sortBy}
                 setSortBy={setSortBy}
+                setShowHome={setShowHome}
               />
             </div>
 
@@ -219,6 +221,10 @@ function App() {
                   ""
                 )}
               </div>
+            ) : showSmoresList ? (
+              <SmoresList smores={smores} setSelectedMovie={setSelectedMovie} />
+            ) : showBurntList ? (
+              <BurntList burnt={burnt} setSelectedMovie={setSelectedMovie} />
             ) : (
               <div className="TrendContainer">
                 <Trending trend={trend} onMovieClick={handleMovieClick} />

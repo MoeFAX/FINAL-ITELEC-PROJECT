@@ -12,6 +12,7 @@ function NavBar({
   setQueryStatus,
   sortBy,
   setSortBy,
+  setShowHome,
 }) {
   function handleLogout() {
     setLogin(false);
@@ -55,7 +56,11 @@ function NavBar({
             <option value={"Oldest"}>Oldest</option>
           </select>
         </div>
-        <SearchBar setMovie={setMovie} setQueryStatus={setQueryStatus} />
+        <SearchBar
+          setMovie={setMovie}
+          setQueryStatus={setQueryStatus}
+          setShowHome={setShowHome}
+        />
         <div className="user-container">
           <FaCircleUser size={30} color="#582f07" />
         </div>
